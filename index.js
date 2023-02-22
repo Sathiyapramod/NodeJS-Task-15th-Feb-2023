@@ -22,7 +22,7 @@ app.get("/create", (request, response) => {
     new Date().getMonth() + 1
   }-${new Date().getFullYear()}-${new Date().getHours()}-${new Date().getMinutes()}-${new Date().getSeconds()}`;
   //   console.log(dateTime);
-  fs.writeFile(`./Files/${dateTime}.txt`, content, (err) => {
+  fs.writeFile(`./${dateTime}.txt`, content, (err) => {
     if (err) console.log(err);
     else console.log("success");
   });
@@ -32,7 +32,7 @@ app.get("/create", (request, response) => {
 //Task-2 to retrieve the files from the Particular folder
 
 app.get("/files",(request,response)=>{
-    fs.readdir("./Files",(err,Files)=>{
+    fs.readdir("./",(err,Files)=>{
         if(err)
             console.log(err)
         else
